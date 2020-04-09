@@ -1,0 +1,51 @@
+<div class="container">
+
+<h3>Proyección y análisis de clientes</h3>
+
+    <div class="row">
+        <div class="col-6">
+
+                <nb-card status="success">
+                    <nb-card-header>Edad Promedio</nb-card-header>
+                    <nb-card-body>
+                     <h1>{{avg_age}}</h1>
+                    </nb-card-body>
+                </nb-card>
+        
+        </div>
+        <div class="col-6">
+
+            <nb-card status="success">
+                <nb-card-header>Desviación estandar</nb-card-header>
+                <nb-card-body>
+                 <h1>{{dsv_age}}</h1>
+                </nb-card-body>
+            </nb-card>
+    
+    </div>
+    </div>
+      
+    <div class="row">
+
+        <div class="col-12">
+
+            <nb-card>
+                    <nb-card-header>Cantidad de personas por Edad</nb-card-header>
+                    <nb-card-body>
+                        <div style="display: block">
+                            <canvas baseChart
+                                    [datasets]="barChartData"
+                                    [labels]="barChartLabels"
+                                    [options]="barChartOptions"
+                                    [legend]="barChartLegend"
+                                    [chartType]="barChartType"
+                                    (chartHover)="chartHovered($event)"
+                                    (chartClick)="chartClicked($event)"></canvas>
+                          </div>
+                    </nb-card-body>
+                </nb-card>
+            
+          </div>
+
+    </div>
+</div>

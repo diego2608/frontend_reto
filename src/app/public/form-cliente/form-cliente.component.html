@@ -1,0 +1,49 @@
+<div class="container">
+
+    <h3>Registro Cliente</h3>
+
+    <nb-card>
+        <nb-card-body class="example-items-col">
+
+            
+            <form [formGroup]="form" (ngSubmit)="save()">
+
+                <div class="form-row">
+
+                    <div class="form-group col-lg-12 col-sm-12">
+                        <label>Nombre: </label>
+                        <input class="form-control" formControlName="name" type="text" nbInput fullWidth status="basic"
+                            placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-lg-12 col-sm-12">
+                        <label>Apellido: </label>
+                        <input class="form-control" formControlName="last_name" type="text" nbInput fullWidth
+                            status="basic" placeholder="Apellido">
+
+                    </div>
+                    <div class="form-group col-lg-12 col-sm-12">
+                        <label>Edad: </label>
+                        <input class="form-control" formControlName="age" type="number" nbInput fullWidth status="basic"
+                            placeholder="Edad">
+
+                    </div>
+                    <div class="form-group col-lg-12 col-sm-12">
+                        <label>Fecha de nacimiento: </label>
+                        <input class="form-control" formControlName="birthday" [nbDatepicker]="datepicker" >
+                        <nb-datepicker #datepicker format="dd.MM.yyyy"> </nb-datepicker>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" class="btn-primary btn" >
+                        ENVIAR
+                    </button>
+                </div>
+
+            </form>
+
+        </nb-card-body>
+    </nb-card>
+
+</div>
